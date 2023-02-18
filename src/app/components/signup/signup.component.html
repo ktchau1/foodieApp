@@ -1,0 +1,55 @@
+<div class="outer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="text-center">
+              <h1>Sign Up</h1>
+              <h6>Please enter your information below</h6>
+            </div>
+            <form>
+              <div class="form-group pt-3">
+                <div class="input-field">
+                  <span class="far fa-user"></span> 
+                  <input type="text" placeholder="First Name">
+                </div>
+              </div>
+              <div class="form-group pt-3">
+                <div class="input-field">
+                  <span class="far fa-user"></span> 
+                  <input type="text" placeholder="Last Name">
+                </div>
+              </div>
+              <div class="form-group pt-3">
+                <div class="input-field">
+                  <span class="far fa-user"></span> 
+                  <input type="text" placeholder="Username">
+                </div>
+              </div>
+              <div class="form-group pt-3">
+                <div class="input-field">
+                  <span class="far fa-user"></span> 
+                  <input type="text" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group pt-3">
+                <div class="input-field">
+                  <span class="fas fa-lock"></span>
+                  <input [type]="type" placeholder="Password">
+                  <span (click)="hideShowPass()" class="fas fa-eye-slash"></span>
+                </div>
+              </div>
+  
+              <button type="button" class="btn btn-primary btn-block mt-4 w-100">Login</button>
+              <br>
+              Have an account? <a routerLink="/signup">Click here to sign in</a>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+                <!-- <ion-button expand="block" shape="round" (click)="signUp()">Sign Up</ion-button> -->
