@@ -7,25 +7,27 @@
             <h1>Login</h1>
             <h6>Please enter email and password</h6>
           </div>
-          <form>
+          <form [formGroup]="loginForm">
             <div class="form-group pt-3">
-              <div class="input-field">
+              <div class="input-field" [class.error]="loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')">
                 <span class="far fa-user"></span> 
-                <input type="text" placeholder="Email">
+                <input formControlName="email" type="text" placeholder="Email">
               </div>
             </div>
+            <small *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')"class="text-danger">*Email is required </small>
             <div class="form-group pt-3">
-              <div class="input-field">
+              <div class="input-field" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')">
                 <span class="fas fa-lock"></span>
-                <input [type]="type" placeholder="Password">
+                <input formControlName="password" [type]="type" placeholder="Password">
                 <span (click)="hideShowPass()" class="fas fa-eye-slash"></span>
               </div>
             </div>
+            <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')"class="text-danger">*Password is required </small>
             <div class="form-inline fr mt-4">
               <a id="forget" class="font-weight-bold">Forgot your password?</a>
             </div>
 
-            <button type="button" class="btn btn-primary btn-block mt-4 w-100">Login</button>
+            <button (click)="onSubmit()" type="button" class="btn btn-primary btn-block mt-4 w-100">Login</button>
             <br>
             Want to be part of Foodie? <a routerLink="/signup">Click here to create an account</a>
             <div class="mx-3 my-2 py-2 bordert">

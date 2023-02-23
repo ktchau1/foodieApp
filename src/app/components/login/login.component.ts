@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -14,10 +15,10 @@ export class LoginComponent implements OnInit{
 
   loginForm:FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private service: UserService, private formBuilder: FormBuilder) {
     this.loginForm = formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]]
     });
   }
 
@@ -33,5 +34,27 @@ export class LoginComponent implements OnInit{
       this.isText ? this.type ="text" : this.type = "password";
 
     }
-  }
+
+
+    onSubmit(){
+      let formData = this.loginForm.value;
+      this.service.login(formData).subscribe((result) =>{
+        localStorage.setItem('currentUser', JSON.stringify(result));
+        alert('Login Successful');
+      }, (err) => {
+        alert('Incorrect email/password')
+      });
+      }
+    }
+//validation for login form
+    // private validateAllFormFilled(formGroup:FormGroup){
+    //   Object.keys(formGroup.controls).forEach(field =>{
+    //     const control = formGroup.get(field);
+    //     if (control instanceof FormControl) {
+    //       control?.markAsDirty({ onlySelf: true});
+    //     } else if (control instanceof FormGroup) {
+    //       this.validateAllFormFilled(control)
+    //     }
+    //   })
+    // }
 

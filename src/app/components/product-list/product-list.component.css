@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+    text-transform: capitalize;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background: #eee;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.container .h5{
+    font-size: 3.5rem;
+    color: #444;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container .products-container{
+    display: grid;
+    grid-template-columns: repeat (auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+}
+
+.container .products-container .box{
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    outline: 0.1rem 1rem;
+    outline-offset: -1.5rem;
+    cursor: pointer;
+}
+
+.container .products-container .box:hover{
+    outline: .2rem solid #222;
+    outline-offset: -1.5rem;
+}
+
+.container .products-container .box img{
+    height: 25rem;
+}
+
+.container .products-container .box:hover img{
+    transform: scale(0.9);
+}

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -7,6 +8,10 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { AddPostComponent } from './components/add-post/add-post.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +19,17 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     SignupComponent,
     LoginComponent,
     WelcomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProductListComponent,
+    HomeComponent,
+    FooterComponent,
+    AddPostComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
