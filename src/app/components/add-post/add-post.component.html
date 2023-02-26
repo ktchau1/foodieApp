@@ -1,5 +1,5 @@
 <div class="form-group">
-    <form (ngSubmit)="onSubmit()">
+    <form [formGroup]="postForm">
         <label for="item" class="form-label">Item Name</label>
         <input type="email" class="form-control" id="item" placeholder="Enter Item">
         <div class="form-group">
@@ -11,11 +11,10 @@
             <textarea class="form-control" id="location" rows="3"></textarea>
         </div>
         <div class="mb-3">
-            <form action="/upload" method="POST" enctype="multi-part/form-data">
-                <!-- <label for="image" class="form-label" (change)="selectImage($event)">File</label> -->
-                <input type="file" name="myImage">
-            </form>
+            <label class="form-label">Image</label>
+            <input type="file" (change)="selectFile($event)" accept="image/x-png,image/gif,image/jpeg" />
         </div>
+    </form>
+</div>
 
-        <button type="submit" (click)="onSubmit()" class="btn btn-default">Add a post</button>
-        <form>
+<button type="submit" (click)="post()" class="btn btn-default">Add a post</button>

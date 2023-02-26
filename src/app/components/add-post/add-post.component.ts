@@ -11,6 +11,7 @@ import { FoodService } from 'src/app/services/food.service';
 export class AddPostComponent implements OnInit{
 
   postForm: FormGroup;
+  selectedImage: any;
 
 
   constructor(private service: FoodService, private formBuilder: FormBuilder) {
@@ -18,25 +19,25 @@ export class AddPostComponent implements OnInit{
       item_name: ['', [Validators.required]],
       description: ['', [Validators.required]],
       location: ['', [Validators.required]],
-      image: ['', [Validators.required]]
     });
   }
 
-
-  selectImage(event:any) {
-
-    if(event.target.files.length >0) {
-      const file = event.target.files[0]
-      console.log('File uploaded')
-    }
+  ngOnInit():void{
 
   }
 
-ngOnInit(){}
 
-onSubmit(){
-  if(this.postForm.valid){
-    console.log("Post Created", this.postForm.value);
+
+  selectFile(event:any): void {
+    this.selectedImage = event.target.files[0];
+    console.log(this.selectedImage)
   }
-}
+
+ post(){
+  let formValues = this.postForm.value;
+
+  let fd = new FormData();
+  fd.append('image', this.selectedImage);
+ }
+
 }

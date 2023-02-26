@@ -1,5 +1,3 @@
-
-
 *{
   margin: 0;
   padding: 0;
@@ -7,22 +5,22 @@
 }
 
 body{
-  font-family: sans-serif, "Poppins";
-  text-transform: lowercase;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;
 }
 
 .container{
-  max-width: 1170px;
-  margin: auto;
+  padding-bottom: 0rem;
+  position: relative;
+  
+
 }
 
 .footer{
-  background: #b2d1b3;
-  padding: 70px 0;
-  margin-top: auto;
+  background-color: #b2d1b3;
+  position: relative;
+  padding: 0%;
+  width: auto;
+  margin-top: 40px;
 }
 
 
@@ -86,6 +84,5 @@ body{
     width: 100%;
     margin-bottom: 30px;
   }
-}
-
+} 
 
