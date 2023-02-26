@@ -2,12 +2,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <div class="card">
+        <div class="wrapper">
           <div class="text-center">
-            <h1>Login</h1>
+            <h3>Login</h3>
             <h6>Please enter email and password</h6>
           </div>
-          <form [formGroup]="loginForm">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="form-group pt-3">
               <div class="input-field" [class.error]="loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')">
                 <span class="far fa-user"></span> 
@@ -27,13 +27,13 @@
               <a id="forget" class="font-weight-bold">Forgot your password?</a>
             </div>
 
-            <button (click)="onSubmit()" type="button" class="btn btn-primary btn-block mt-4 w-100">Login</button>
+            <button (click)="onSubmit()" a routerLink="/home" type="button" class="btn btn-primary btn-block mt-4 w-100">Login</button>
             <br>
             Want to be part of Foodie? <a routerLink="/signup">Click here to create an account</a>
             <div class="mx-3 my-2 py-2 bordert">
               <div class="text-center py-3"></div>
               Connect with us
-              <a href ="https://github.com/" target="_blank" class="px-2"><i class="fab fa-github"></i></a>
+              <a href ="https://facebook.com/" target="_blank" class="px-2"><i class="fab fa-facebook"></i></a>
               <a href = "http://twitter.com/" target="_blank" class ="px-2"><i class="fab fa-twitter"></i></a>
             </div>
 

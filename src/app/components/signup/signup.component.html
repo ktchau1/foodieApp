@@ -2,12 +2,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <div class="card">
+          <div class="wrapper">
             <div class="text-center">
               <h1>Sign Up</h1>
               <h6>Please enter your information below</h6>
             </div>
-            <form [formGroup]="signUpForm">
+            <form [formGroup]="signUpForm" (ngSubmit)="onSignup()">
               <div class="form-group pt-3">
                 <div class="input-field" [class.error]="signUpForm.controls['first_name'].dirty && signUpForm.hasError('required', 'first_name')">
                   <span class="far fa-user"></span> 
@@ -47,7 +47,7 @@
   
               <button type="button" class="btn btn-primary btn-block mt-4 w-100" (click)="onSignup()">Create</button>
               <br>
-              Have an account? <a routerLink="/login">Click here to sign in</a>
+              Have an account? <a routerLink="">Click here to sign in</a>
 
             </form>
           </div>

@@ -1,0 +1,70 @@
+.wrapper{
+    position: center;
+    text-align: center;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(20px);
+    border: none;
+    width: 600px;
+    padding: 40px;
+    top: 50%;
+    left: 50%;
+}
+
+
+.outer{
+    height: 100vh;
+    background: linear-gradient( #ffffff ) no-repeat;
+}
+
+#forget{
+    min-width: 100px;
+    margin-left: auto;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.btn{
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.input-field{
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    color: black;
+}
+
+.input-field-error{
+    border: 1px solid red;
+    color: red;
+}
+
+input[type='text'],
+input[type='password']{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+}
+
+.bordert{
+    border-top: 1px solid #aaaa;
+    position: relative;
+}
+
+.bordert:after{
+    position: absolute;
+    top: -13px;
+    left: 33%;
+    padding: 0 8px;
+}

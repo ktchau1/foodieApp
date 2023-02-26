@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit{
   isText: boolean = false;
   eyeIcon: string ="fa-eye-slash"
 
-  loginForm:FormGroup;
+  loginForm: FormGroup;
 
   constructor(private service: UserService, private formBuilder: FormBuilder) {
     this.loginForm = formBuilder.group({
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit{
 
     onSubmit(){
       let formData = this.loginForm.value;
-      this.service.login(formData).subscribe((result) =>{
+      this.service.login(formData).subscribe((result) => {
         localStorage.setItem('currentUser', JSON.stringify(result));
         alert('Login Successful');
       }, (err) => {
@@ -46,15 +46,6 @@ export class LoginComponent implements OnInit{
       });
       }
     }
-//validation for login form
-    // private validateAllFormFilled(formGroup:FormGroup){
-    //   Object.keys(formGroup.controls).forEach(field =>{
-    //     const control = formGroup.get(field);
-    //     if (control instanceof FormControl) {
-    //       control?.markAsDirty({ onlySelf: true});
-    //     } else if (control instanceof FormGroup) {
-    //       this.validateAllFormFilled(control)
-    //     }
-    //   })
-    // }
+  
+
 

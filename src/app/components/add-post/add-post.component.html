@@ -1,82 +1,21 @@
-<div class="mb-3">
-    <!-- <form [formGroup]="userForm"> -->
-        <div class="userForm">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" formControlName="title" class="form-control" id="title" placeholder="title">
-        </div>
-
-        <div class="alert alert-danger" *ngIf="titleFormControl.invalid && titleFormControl.touched">
-            <div *ngIf="titleFormControl.errors?.['required']">Title is required</div>
-        </div>
-
-
-        <div class="mb-3">
+<div class="form-group">
+    <form (ngSubmit)="onSubmit()">
+        <label for="item" class="form-label">Item Name</label>
+        <input type="email" class="form-control" id="item" placeholder="Enter Item">
+        <div class="form-group">
             <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" formControlName="description" id="description" rows="3"
-                placeholder="Enter the Description"></textarea>
+            <textarea class="form-control" id="description" rows="3"></textarea>
         </div>
-
-        <div class="alert alert-danger" *ngIf="descriptionFormControl.invalid && descriptionFormControl.touched">
-            <div *ngIf="descriptionFormControl.errors?.['required']">Description is required</div>
+        <div class="form-group">
+            <label for="location" class="form-label">Location</label>
+            <textarea class="form-control" id="location" rows="3"></textarea>
         </div>
-
         <div class="mb-3">
-            <label for="category" class="form-label">Category</label>
-            <input type="text" class="form-control" formControlName="category" id="category"
-                placeholder="Enter the Category">
+            <form action="/upload" method="POST" enctype="multi-part/form-data">
+                <!-- <label for="image" class="form-label" (change)="selectImage($event)">File</label> -->
+                <input type="file" name="myImage">
+            </form>
         </div>
 
-        <div class="alert alert-danger" *ngIf="categoryFormControl.invalid && categoryFormControl.touched">
-            <div *ngIf="categoryFormControl.errors?.['required']">Category is required</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="date" class="form-label">Date</label>
-            <input type="date" class="form-control" formControlName="date" id="exampleFormControlInput1" placeholder="Date">
-        </div>
-
-        <div class="alert alert-danger" *ngIf="dateFormControl.invalid && dateFormControl.touched">
-            <div *ngIf="dateFormControl.errors?.['required']">Date is required</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="time" class="form-label">Time</label>
-            <input type="time" class="form-control" formControlName="time" id="exampleFormControlInput1"
-                placeholder="Time">
-        </div>
-
-        <div class="alert alert-danger" *ngIf="timeFormControl.invalid && timeFormControl.touched">
-            <div *ngIf="timeFormControl.errors?.['required']">Time is required</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="priority_level" class="form-label">Priority Level</label>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Select Priority Level</option>
-                <option value="1">Low</option>
-                <option value="2">Medium</option>
-                <option value="3">High</option>
-            </select>
-        </div>
-
-        <div class="alert alert-danger" *ngIf="priority_levelFormControl.invalid && priority_levelFormControl.touched">
-            <div *ngIf="priority_levelFormControl.errors?.['required']">Priority Level is required</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="progress_level" class="form-label">Progress Level</label>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Select Progress Level</option>
-                <option value="1">Not Started</option>
-                <option value="2">In Progress</option>
-                <option value="3">Completed</option>
-            </select>
-        </div>
-
-        <div class="alert alert-danger" *ngIf="progress_levelFormControl.invalid && progress_levelFormControl.touched">
-            <div *ngIf="progress_levelFormControl.errors?.['required']">Progress Level is required</div>
-        </div>
-
-        <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="userForm".invalid>Submit></button>
-
-    <!-- </form> -->
+        <button type="submit" (click)="onSubmit()" class="btn btn-default">Add a post</button>
+        <form>

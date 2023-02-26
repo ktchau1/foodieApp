@@ -6,30 +6,33 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
-import { WelcomeComponent } from './components/welcome/welcome.component';
+
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
-import { HomeComponent } from './components/home/home.component';
+
 import { FooterComponent } from './components/footer/footer.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     LoginComponent,
-    WelcomeComponent,
     NavbarComponent,
     ProductListComponent,
-    HomeComponent,
     FooterComponent,
-    AddPostComponent
+    AddPostComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

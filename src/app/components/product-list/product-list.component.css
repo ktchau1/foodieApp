@@ -63,3 +63,8 @@ body{
 .container .products-container .box:hover img{
     transform: scale(0.9);
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+  }

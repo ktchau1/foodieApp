@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FoodService {
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
 
-
-
-  ngOnInit(){}
-
-
+  post(formData: object) {
+    return this.http.post('http://localhost:3000/add-post', formData);
   }
+
+}
+
+
